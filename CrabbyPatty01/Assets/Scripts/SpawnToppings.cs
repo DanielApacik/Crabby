@@ -11,7 +11,29 @@ public class SpawnToppings : MonoBehaviour
     public GameObject cheese;
     public GameObject top_bun;
     public GameObject onion;
-    public GameObject patty;
+    public GameObject patty;/*
+    public GameObject ketchup;
+    public GameObject mustard;
+    public GameObject pickles;
+    public GameObject lettuse;
+    public GameObject bacon;
+
+    
+    public List<GameObject> badToppingList;
+    public GameObject socks;
+    public GameObject fish_bones;
+    public GameObject needle;
+    public GameObject toilet_paper;
+    public GameObject boot;
+    public GameObject sponge;
+    public GameObject mouse;
+    public GameObject rat_poison;
+    public GameObject band_aid;
+*/
+    public List<GameObject> getToppingList;
+
+
+
 
 
 
@@ -20,8 +42,27 @@ public class SpawnToppings : MonoBehaviour
     {
         goodToppingsList = new List<GameObject>
         {
-            tomato, cheese, top_bun, onion, patty
+            tomato, cheese, top_bun, onion, patty //, ketchup, mustard, pickles, lettuse, bacon
         };
+        /*
+         
+        badToppingList = new List<GameObject>
+        {
+            socks, fish_bones, needle, toilet_paper, boot, sponge, mouse, rat_poison, band_aid
+        };
+*/
+        getToppingList = new List<GameObject>();
+        getToppingList.Add(goodToppingsList[Random.Range(0, goodToppingsList.Capacity)]);
+        getToppingList.Add(goodToppingsList[Random.Range(0, goodToppingsList.Capacity)]);
+        getToppingList.Add(goodToppingsList[Random.Range(0, goodToppingsList.Capacity)]);
+
+
+
+
+
+
+
+
         //SpawnNextTopping();
     }
 
@@ -36,7 +77,8 @@ public class SpawnToppings : MonoBehaviour
     {
         //GameObject nextTopping = (GameObject)Instantiate(Resources.Load(GetRandomTopping(), typeof(GameObject)), new Vector2(Random.Range(-7, 4), 6), Quaternion.identity);//call through Resourses folder using switch
      
-        GameObject nextTopping = Instantiate(goodToppingsList[Random.Range(0, goodToppingsList.Capacity)], new Vector2(Random.Range(-7, 4), 6), Quaternion.identity);
+        GameObject nextTopping = Instantiate(goodToppingsList[Random.Range(0, goodToppingsList.Capacity)], 
+            new Vector2(Random.Range(-7, 4), 6), Quaternion.identity);
     }
 
 

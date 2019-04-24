@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public bool isPaused;
 
     private float toppingDropTimer = 0;
-    private float toppingDropCoolDown = 1.0f;
+    private float toppingDropCoolDown = 2.0f;
     private bool canDrop = false;
 
     private void Awake()
