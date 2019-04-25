@@ -244,7 +244,7 @@ PrefabInstance:
     - target: {fileID: 3213922696023353456, guid: 23e2bae439cbbbf40aaaa1ac0aaf9a1e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3213922696023353456, guid: 23e2bae439cbbbf40aaaa1ac0aaf9a1e,
         type: 3}
@@ -977,7 +977,6 @@ GameObject:
   - component: {fileID: 945082457}
   - component: {fileID: 945082456}
   - component: {fileID: 945082459}
-  - component: {fileID: 945082460}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1063,28 +1062,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPaused: 0
---- !u!114 &945082460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 945082455}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b78196c3773b2e4389942c6674ce9f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  goodToppingsList: []
-  tomato: {fileID: 7726366340303072755, guid: 967a55c19139b9443b252f6bf266e1e4, type: 3}
-  cheese: {fileID: 6327950767292412006, guid: bb43199a87200c34caea14164d9a3d3f, type: 3}
-  top_bun: {fileID: 7336843917116422229, guid: 2830f3c53a212744eadfcfb23e75daa9, type: 3}
-  onion: {fileID: 3557110776826327794, guid: 61759cc5672e5e44e8aa761f24269222, type: 3}
-  patty: {fileID: 2810923779087704228, guid: 80acbf4dfad2fed4896c2c58fcb10b03, type: 3}
-  getToppingList: []
-  targetEmitter01: {fileID: 1948246192}
-  targetEmitter02: {fileID: 1439133321}
-  targetEmitter03: {fileID: 1199631678}
 --- !u!1001 &1015468357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1509,7 +1486,7 @@ Transform:
   m_LocalScale: {x: 55.226, y: 12.4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1446523158
 MonoBehaviour:
@@ -1533,6 +1510,7 @@ MonoBehaviour:
   targetEmitter01: {fileID: 1948246192}
   targetEmitter02: {fileID: 1439133321}
   targetEmitter03: {fileID: 1199631678}
+  fallSpeed: 0.5
 --- !u!1001 &1454341071
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2004,7 +1982,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1996371917}
-  - component: {fileID: 1996371916}
   m_Layer: 0
   m_Name: BurgerWalls
   m_TagString: Untagged
@@ -2012,28 +1989,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1996371916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1996371915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b78196c3773b2e4389942c6674ce9f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  goodToppingsList: []
-  tomato: {fileID: 0}
-  cheese: {fileID: 0}
-  top_bun: {fileID: 0}
-  onion: {fileID: 0}
-  patty: {fileID: 0}
-  getToppingList: []
-  targetEmitter01: {fileID: 0}
-  targetEmitter02: {fileID: 0}
-  targetEmitter03: {fileID: 0}
 --- !u!4 &1996371917
 Transform:
   m_ObjectHideFlags: 0
@@ -2048,7 +2003,7 @@ Transform:
   - {fileID: 827757014}
   - {fileID: 530172035}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2032855325 stripped
 Transform:

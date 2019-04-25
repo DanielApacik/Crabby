@@ -40,23 +40,39 @@ public class SpawnToppings : MonoBehaviour
     public GameObject targetEmitter02;
     public GameObject targetEmitter03;
 
-    public float fallSpeed = 50.0f;
+    public float fallSpeed = 0.5f;
 
 
     private void Awake()
     {
         instance = this;
+
+        goodToppingsList = new List<GameObject>
+        {
+            tomato, cheese, top_bun, onion, patty //, ketchup, mustard, pickles, lettuse, bacon
+        };
+
+
+        getToppingList = new List<GameObject>();
+        getToppingList.Add(goodToppingsList[Random.Range(0, goodToppingsList.Count)]);
+        getToppingList.Add(goodToppingsList[Random.Range(0, goodToppingsList.Count)]);
+        getToppingList.Add(goodToppingsList[Random.Range(0, goodToppingsList.Count)]);
+
+        
+
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
+
+/*
         goodToppingsList = new List<GameObject>
         {
             tomato, cheese, top_bun, onion, patty //, ketchup, mustard, pickles, lettuse, bacon
         };
-        /*
+        
          
         badToppingList = new List<GameObject>
         {
@@ -68,7 +84,7 @@ public class SpawnToppings : MonoBehaviour
         {
             targetTopping01, targetTopping02, targetTopping03
         };
-*/
+
 
 
 
@@ -78,7 +94,7 @@ public class SpawnToppings : MonoBehaviour
         getToppingList = new List<GameObject>();
         getToppingList.Add(goodToppingsList[Random.Range(0, goodToppingsList.Count)]);
         getToppingList.Add(goodToppingsList[Random.Range(0, goodToppingsList.Count)]);
-        getToppingList.Add(goodToppingsList[Random.Range(0, goodToppingsList.Count)]);
+        getToppingList.Add(goodToppingsList[Random.Range(0, goodToppingsList.Count)]);*/
         //targetTopping01 = getToppingList[0];
         //targetTopping02 = getToppingList[1];
         //targetTopping03 = getToppingList[2];
@@ -126,6 +142,8 @@ public class SpawnToppings : MonoBehaviour
         //GameObject nextTopping = (GameObject)Instantiate(Resources.Load(GetRandomTopping(), typeof(GameObject)), new Vector2(Random.Range(-7, 4), 6), Quaternion.identity);//call through Resourses folder using switch
      
         GameObject nextTopping = Instantiate(goodToppingsList[Random.Range(0, goodToppingsList.Count)], new Vector2(Random.Range(-7, 4), 6), Quaternion.identity);
+        Rigidbody2D rbToppingTest = nextTopping.GetComponent<Rigidbody2D>();
+        rbToppingTest.gravityScale = fallSpeed;
     }
 
 
