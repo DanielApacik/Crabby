@@ -8,8 +8,9 @@ public class GameManager : MonoBehaviour
     public bool isPaused;
 
     private float toppingDropTimer = 0;
-    private float toppingDropCoolDown = 2.0f;
+    private float toppingDropCoolDown = 0.5f;
     private bool canDrop = false;
+
 
     private void Awake()
     {
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         isPaused = false;
+        FindObjectOfType<SpawnToppings>().SetTargetToppings();
     }
 
     // Update is called once per frame
