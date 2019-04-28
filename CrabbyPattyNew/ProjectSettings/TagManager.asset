@@ -17,6 +17,8 @@ TagManager:
   - pickles
   - lettuce
   - bacon
+  - SIDEtoppings
+  - SIDEtop_bun
   layers:
   - Default
   - TransparentFX

@@ -11,16 +11,22 @@ public class GameManager : MonoBehaviour
     private float toppingDropCoolDown = 0.25f;
     private bool canDrop = false;
 
+    public GameObject playerBun;
+
+    public Vector2 spawnPlayerLocation;
 
     private void Awake()
     {
         instance = this;
+        //SetPlayer();
     }
 
     // Start is called before the first frame update
     void Start()
     {
         isPaused = false;
+        spawnPlayerLocation = new Vector2(-2f, -4.2f);
+        SetPlayer();
     }
 
     // Update is called once per frame
@@ -47,6 +53,14 @@ public class GameManager : MonoBehaviour
         {
             canDrop = false;
         }
+    }
+
+    public void SetPlayer()
+    {
+        playerBun = Instantiate(playerBun, spawnPlayerLocation, Quaternion.identity);
+        //PlayerControls.instance.Controls
+        enabled = true;
+        //PlayerControls.instance.hasBun = false;
     }
 
 

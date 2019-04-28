@@ -69,6 +69,18 @@ public class SpawnToppings : MonoBehaviour
     public GameObject targetPointsEmitter09;
 
 
+    public List<GameObject> sideToppingsList;
+    public GameObject top_bunSIDE;
+    public GameObject tomatoSIDE;
+    public GameObject cheeseSIDE;
+    public GameObject onionSIDE;
+    public GameObject pattySIDE;
+    public GameObject ketchupSIDE;
+    public GameObject mustardSIDE;
+    public GameObject picklesSIDE;
+    public GameObject lettuceSIDE;
+    public GameObject baconSIDE;
+
 
     public float fallSpeed = 0.5f;
 
@@ -92,7 +104,11 @@ public class SpawnToppings : MonoBehaviour
         {
             top_bunSCORE, tomatoSCORE, cheeseSCORE, onionSCORE, pattySCORE, ketchupSCORE, mustardSCORE, picklesSCORE, lettuceSCORE, baconSCORE
         };
-     
+
+        sideToppingsList = new List<GameObject>
+        {
+            top_bunSIDE, tomatoSIDE, cheeseSIDE, onionSIDE, pattySIDE, ketchupSIDE, mustardSIDE, picklesSIDE, lettuceSIDE, baconSIDE
+        };
 
         displayEmitterList = new List<GameObject>
         {
