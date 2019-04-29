@@ -81,6 +81,8 @@ public class SpawnToppings : MonoBehaviour
     public GameObject lettuceSIDE;
     public GameObject baconSIDE;
 
+    public GameObject burgerTextObject;
+
 
     public float fallSpeed = 0.5f;
 

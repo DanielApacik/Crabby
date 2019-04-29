@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
     {
         playerBun = Instantiate(playerBun, spawnPlayerLocation, Quaternion.identity);
         //PlayerControls.instance.Controls
-        enabled = true;
+        //enabled = true;
         //PlayerControls.instance.hasBun = false;
     }
 
