@@ -17,7 +17,17 @@ public class floor : MonoBehaviour {
      it gets destroyed */
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Food")
+        if (col.gameObject.tag == "Food1")
+        {
+            Destroy(col.gameObject);
+            Debug.Log("hit floor");
+        }
+        if (col.gameObject.tag == "Food2")
+        {
+            Destroy(col.gameObject);
+            Debug.Log("hit floor");
+        }
+        if (col.gameObject.tag == "Food3")
         {
             Destroy(col.gameObject);
             Debug.Log("hit floor");
