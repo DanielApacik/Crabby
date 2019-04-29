@@ -1,5 +1,84 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &93539882982376699
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7891788487430552200}
+  - component: {fileID: 8678172185390908597}
+  m_Layer: 0
+  m_Name: BLANK
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7891788487430552200
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93539882982376699}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3121938804914164220}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &8678172185390908597
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93539882982376699}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: e98aec72d46095b4fb60e6ed63fb20ed, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &3121938804528853897
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,6 +172,7 @@ Transform:
   m_Children:
   - {fileID: 3121938804750264193}
   - {fileID: 3121938804528853896}
+  - {fileID: 7891788487430552200}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -209,5 +289,36 @@ MonoBehaviour:
   scorePOPUPEmitter: {fileID: 3121938804750264198}
   ramsey: {fileID: 965371156443897405, guid: 69780007fddd22d43a3b2562f3f9256a, type: 3}
   SIDEToppingsEmitter: {fileID: 3121938804528853897}
+  sidewaysDisplay0: {fileID: 945775096493556454, guid: 8bddf4c4805e6a24bb1028937e31856c,
+    type: 3}
+  sidewaysDisplay1: {fileID: 4973168134370061794, guid: 254dfc929b29afb41a04cd4f345f016d,
+    type: 3}
+  sidewaysDisplay2: {fileID: 8573713676117075646, guid: 3b76f9ca9f55b93439117b0231d6f272,
+    type: 3}
+  sidewaysDisplay3: {fileID: 2121481121362232286, guid: 87342de788a2e034c896b2ee08c00c05,
+    type: 3}
+  sidewaysDisplay4: {fileID: 7119640958842561749, guid: f9283daecdea875438c14af2d73bf28e,
+    type: 3}
+  sidewaysDisplay5: {fileID: 3302911340567805745, guid: 51b9a657369670e45b6eb7c94d1bdc5e,
+    type: 3}
+  sidewaysDisplay6: {fileID: 6779058151856173243, guid: ffa437e32c25b6a4db5acc459c625d92,
+    type: 3}
+  sidewaysDisplay7: {fileID: 8683095363965649033, guid: 9d9b6e863c6863d469fda70028bec952,
+    type: 3}
+  sidewaysDisplay8: {fileID: 5768872811679665204, guid: 0bfdb71d142d6fe49a02215718d4f09c,
+    type: 3}
+  sidewaysDisplay9: {fileID: 5776791229101580626, guid: 9445651a9cfa10547a062e3f563e3024,
+    type: 3}
+  sidewaysBlankDisplay: {fileID: 271063773816262154, guid: ac1dd1c9acaedd24e8e5d8b5f0051d43,
+    type: 3}
   toppingStack: 0
   hasBun: 0
+  hasTomato: 0
+  hasCheese: 0
+  hasOnion: 0
+  hasPatty: 0
+  hasKetchup: 0
+  hasMustard: 0
+  hasPickles: 0
+  hasLettuce: 0
+  hasBacon: 0
