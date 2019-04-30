@@ -64,26 +64,12 @@ public class PlayerControls : MonoBehaviour
 
     public void Controls()
     {
-        if (hasBun != true)
+        transform.position = new Vector2(Mathf.Clamp(transform.position.x, -7, 3), Mathf.Clamp(transform.position.y, -4.2f, -4.2f));
+        rb.velocity = new Vector2(moveDirection.x * SPEED, moveDirection.y * SPEED);
+        moveDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            transform.position = new Vector2(Mathf.Clamp(transform.position.x, -7, 3), Mathf.Clamp(transform.position.y, -4.2f, -4.2f));
-            rb.velocity = new Vector2(moveDirection.x * SPEED, moveDirection.y * SPEED);
-            moveDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-            if (Input.GetKeyDown(KeyCode.P))
-            {
-                GameManager.instance.PauseGame();
-            }
-        }
-        else
-        {
-            transform.position = gameObject.transform.position;
-            /*transform.position = new Vector2(Mathf.Clamp(transform.position.x, -7, 3), Mathf.Clamp(transform.position.y, -4.2f, -4.2f));
-            rb.velocity = new Vector2(moveDirection.x * 0, moveDirection.y * 0);
-            moveDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-            if (Input.GetKeyDown(KeyCode.P))
-            {
-                GameManager.instance.PauseGame();
-            }*/
+            GameManager.instance.PauseGame();
         }
     }
     public void BunCheck()
