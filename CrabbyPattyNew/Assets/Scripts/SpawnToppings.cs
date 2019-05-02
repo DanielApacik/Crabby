@@ -131,7 +131,6 @@ public class SpawnToppings : MonoBehaviour
             displayTopping.transform.localScale = new Vector2(transform.localScale.x * 0.04f, transform.localScale.y * 0.4f);
             Rigidbody2D rbTopping = displayTopping.GetComponent<Rigidbody2D>();
             rbTopping.gravityScale = 0;
-
         }
 
 

@@ -15,6 +15,10 @@ public class PlayerControls : MonoBehaviour
     public int score = 0;
     public int bankedScore = 0;
     public int lives = 3;
+
+    public int numBurgers = 0;
+    //public bool burgerDONE = false;
+
     public GameObject scorePOPUPEmitter;
     public GameObject ramsey;
     public GameObject SIDEToppingsEmitter;
@@ -46,6 +50,11 @@ public class PlayerControls : MonoBehaviour
     public bool hasPickles = false;//7
     public bool hasLettuce = false;//8
     public bool hasBacon = false;//9
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -205,6 +214,8 @@ public class PlayerControls : MonoBehaviour
             sidewaysDisplay0.transform.parent = gameObject.transform;
             hasBun = true;
             //Destroy(sidewaysDisplay0, 1f);
+            ++numBurgers;
+            //burgerDONE = true;
             bankedScore += score;
             score = 0;
             toppingStack = 0;
