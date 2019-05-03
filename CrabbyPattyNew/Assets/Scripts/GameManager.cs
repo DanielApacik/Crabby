@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public bool isPaused;
 
-    private float toppingDropTimer = 0;
-    private float toppingDropCoolDown = 0.25f;
+    private float toppingDropTimer;
+    private float toppingDropCoolDown;
     private bool canDrop = false;
 
     public GameObject playerBun;
@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        toppingDropTimer = 0.5f;
+        toppingDropCoolDown = 1.0f;
         isPaused = false;
         spawnPlayerLocation = new Vector2(-2f, -4.2f);
         SetPlayer();
@@ -32,6 +34,26 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PlayerControls.instance.bankedScore >= 200)
+        {
+            toppingDropCoolDown = 0.50f;
+        }
+        else if (PlayerControls.instance.bankedScore >= 300)
+        {
+            SpawnToppings.instance.fallSpeed = 0.75f;
+            toppingDropCoolDown = 0.25f;
+        }
+        else if (PlayerControls.instance.bankedScore >= 400)
+        {
+            toppingDropCoolDown = 0.125f;
+        }
+        else if (PlayerControls.instance.bankedScore >= 600)
+        {
+            SpawnToppings.instance.fallSpeed = 1.0f;
+            toppingDropCoolDown = 0.025f;
+        }
+
+
         if (toppingDropTimer > 0)
         {
             toppingDropTimer -= Time.deltaTime;

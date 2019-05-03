@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-//using TMPro;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,14 +8,14 @@ public class GameHUDManager : MonoBehaviour
 {
     public static GameHUDManager instance;
 
-    public Text txtTimer;
+    public TMP_Text txtTimer;
 
-    int time;
+    public int time;
 
-    public Text txtPaused;
+    public TMP_Text txtPaused;
 
-    public Text txtCurrentScore;
-    public Text txtBankedScore;
+    public TMP_Text txtCurrentScore;
+    public TMP_Text txtBankedScore;
 
     private void Awake()
     {
