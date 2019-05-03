@@ -14,10 +14,9 @@ public class PlayerControls : MonoBehaviour
 
     public int score = 0;
     public int bankedScore = 0;
-    public int lives = 3;
+    public int lives;
 
     public int numBurgers = 0;
-    //public bool burgerDONE = false;
 
     public GameObject scorePOPUPEmitter;
     public GameObject ramsey;
@@ -61,14 +60,28 @@ public class PlayerControls : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         moveDirection = Vector2.zero;
+        lives = 3;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //BunCheck();
         Controls();
         BunCheck();
+    }
+
+    private void FixedUpdate()
+    {
+        if (numBurgers >= 10)
+        {
+            BurgerDisplayReset();
+        }
+    }
+
+    public void BurgerDisplayReset()
+    {
+        numBurgers = 0;
+        lives += 1;
     }
 
     public void Controls()
@@ -85,86 +98,64 @@ public class PlayerControls : MonoBehaviour
     {
         if (hasBun == true)
         {
-            //enabled = false;
-            //GameManager.instance.spawnPlayerLocation = gameObject.transform.position;
             Destroy(sidewaysDisplay0, 1.0f);
             
             
             if (hasTomato == true)
             {
-                //sidewaysDisplay1 = sidewaysBlankDisplay;
-                //DestroyImmediate(sidewaysDisplay1);
                 sidewaysDisplay1.transform.parent = null;
                 Destroy(sidewaysDisplay1);
                 hasTomato = false;
             }
             if (hasCheese == true)
             {
-                //sidewaysDisplay2 = sidewaysBlankDisplay;
-                //DestroyImmediate(sidewaysDisplay2);
                 sidewaysDisplay2.transform.parent = null;
                 Destroy(sidewaysDisplay2);
                 hasCheese = false;
             }
             if (hasOnion == true)
             {
-                //sidewaysDisplay3 = sidewaysBlankDisplay;
-                //DestroyImmediate(sidewaysDisplay3);
                 sidewaysDisplay3.transform.parent = null;
                 Destroy(sidewaysDisplay3);
                 hasOnion = false;
             }
             if (hasPatty == true)
             {
-                //sidewaysDisplay4 = sidewaysBlankDisplay;
-                //DestroyImmediate(sidewaysDisplay4);
                 sidewaysDisplay4.transform.parent = null;
                 Destroy(sidewaysDisplay4);
                 hasPatty = false;
             }
             if (hasKetchup == true)
             {
-                //sidewaysDisplay5 = sidewaysBlankDisplay;
-                //DestroyImmediate(sidewaysDisplay5);
                 sidewaysDisplay5.transform.parent = null;
                 Destroy(sidewaysDisplay5);
                 hasKetchup = false;
             }
             if (hasMustard == true)
             {
-                //sidewaysDisplay6 = sidewaysBlankDisplay;
-                //DestroyImmediate(sidewaysDisplay6);
                 sidewaysDisplay6.transform.parent = null;
                 Destroy(sidewaysDisplay6);
                 hasMustard = false;
             }
             if (hasPickles == true)
             {
-                //sidewaysDisplay7 = sidewaysBlankDisplay;
-                //DestroyImmediate(sidewaysDisplay7);
                 sidewaysDisplay7.transform.parent = null;
                 Destroy(sidewaysDisplay7);
                 hasPickles = false;
             }
             if (hasLettuce == true)
             {
-                //sidewaysDisplay8 = sidewaysBlankDisplay;
-                //DestroyImmediate(sidewaysDisplay8);
                 sidewaysDisplay8.transform.parent = null;
                 Destroy(sidewaysDisplay8);
                 hasLettuce = false;
             }
             if (hasBacon == true)
             {
-                //sidewaysDisplay9 = sidewaysBlankDisplay;
-                //DestroyImmediate(sidewaysDisplay9);
                 sidewaysDisplay9.transform.parent = null;
                 Destroy(sidewaysDisplay9);
                 hasBacon = false;
-            }
-            
+            }            
             hasBun = false;
-            //GameManager.instance.SetPlayer();
         }
         else
         {
@@ -213,13 +204,10 @@ public class PlayerControls : MonoBehaviour
             }
             sidewaysDisplay0.transform.parent = gameObject.transform;
             hasBun = true;
-            //Destroy(sidewaysDisplay0, 1f);
             ++numBurgers;
-            //burgerDONE = true;
             bankedScore += score;
             score = 0;
             toppingStack = 0;
-            //hasBun = true;
         }
 
         if (collision.gameObject.tag == "tomato")
@@ -266,7 +254,6 @@ public class PlayerControls : MonoBehaviour
                 else if (toppingStack >= 6)
                 {
                     sidewaysDisplay1.transform.position = new Vector2(transform.position.x, transform.position.y + 0.325f);
-                    //Destroy(sidewaysDisplay1);
                 }
                 sidewaysDisplay1.transform.parent = gameObject.transform;
                 hasTomato = true;
@@ -317,7 +304,6 @@ public class PlayerControls : MonoBehaviour
                 else if (toppingStack >= 6)
                 {
                     sidewaysDisplay2.transform.position = new Vector2(transform.position.x, transform.position.y + 0.325f);
-                    //Destroy(sidewaysDisplay2);
                 }
                 sidewaysDisplay2.transform.parent = gameObject.transform;
                 hasCheese = true;
@@ -368,7 +354,6 @@ public class PlayerControls : MonoBehaviour
                 else if (toppingStack >= 6)
                 {
                     sidewaysDisplay3.transform.position = new Vector2(transform.position.x, transform.position.y + 0.325f);
-                    //Destroy(sidewaysDisplay3);
                 }
                 sidewaysDisplay3.transform.parent = gameObject.transform;
                 hasOnion = true;
@@ -419,7 +404,6 @@ public class PlayerControls : MonoBehaviour
                 else if (toppingStack >= 6)
                 {
                     sidewaysDisplay4.transform.position = new Vector2(transform.position.x, transform.position.y + 0.325f);
-                    //Destroy(sidewaysDisplay4);
                 }
                 sidewaysDisplay4.transform.parent = gameObject.transform;
                 hasPatty = true;
@@ -470,7 +454,6 @@ public class PlayerControls : MonoBehaviour
                 else if (toppingStack >= 6)
                 {
                     sidewaysDisplay5.transform.position = new Vector2(transform.position.x, transform.position.y + 0.325f);
-                    //Destroy(sidewaysDisplay5);
                 }
                 sidewaysDisplay5.transform.parent = gameObject.transform;
                 hasKetchup = true;
@@ -521,7 +504,6 @@ public class PlayerControls : MonoBehaviour
                 else if (toppingStack >= 6)
                 {
                     sidewaysDisplay6.transform.position = new Vector2(transform.position.x, transform.position.y + 0.325f);
-                    //Destroy(sidewaysDisplay6);
                 }
                 sidewaysDisplay6.transform.parent = gameObject.transform;
                 hasMustard = true;
@@ -572,7 +554,6 @@ public class PlayerControls : MonoBehaviour
                 else if (toppingStack >= 6)
                 {
                     sidewaysDisplay7.transform.position = new Vector2(transform.position.x, transform.position.y + 0.325f);
-                    //Destroy(sidewaysDisplay7);
                 }
                 sidewaysDisplay7.transform.parent = gameObject.transform;
                 hasPickles = true;
@@ -623,7 +604,6 @@ public class PlayerControls : MonoBehaviour
                 else if (toppingStack >= 6)
                 {
                     sidewaysDisplay8.transform.position = new Vector2(transform.position.x, transform.position.y + 0.325f);
-                    //Destroy(sidewaysDisplay8);
                 }
                 sidewaysDisplay8.transform.parent = gameObject.transform;
                 hasLettuce = true;
@@ -674,7 +654,6 @@ public class PlayerControls : MonoBehaviour
                 else if (toppingStack >= 6)
                 {
                     sidewaysDisplay9.transform.position = new Vector2(transform.position.x, transform.position.y + 0.325f);
-                    //Destroy(sidewaysDisplay9);
                 }
                 sidewaysDisplay9.transform.parent = gameObject.transform;
                 hasBacon = true;
@@ -688,14 +667,26 @@ public class PlayerControls : MonoBehaviour
                 GameObject ramseyPOPUP = Instantiate(ramsey, new Vector2(0, -1), Quaternion.identity);
                 ramseyPOPUP.transform.localScale = new Vector2(transform.localScale.x * 5.0f, transform.localScale.y * 5.0f);
                 Destroy(collision.gameObject);
+                if (numBurgers > 0)
+                {
+                    burgerHighlight.instance.ResetBurgers();
+                    numBurgers -= 1;
+                }
                 //you lose navigate to lose scene
             }
             else
             {
                 GameObject ramseyPOPUP = Instantiate(ramsey, new Vector2(2, -4), Quaternion.identity);
                 Destroy(ramseyPOPUP, 1.25f);
-                lives -= 1;
+                score /= 2;
                 Destroy(collision.gameObject);
+                if (numBurgers > 0)
+                {
+                    burgerHighlight.instance.ResetBurgers();
+                    numBurgers -= 1;
+                }
+                LivesDisplay.instance.ResetLives();
+                lives -= 1;
             }
         }
     }

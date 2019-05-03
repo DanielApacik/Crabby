@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,7 +19,6 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        //SetPlayer();
     }
 
     // Start is called before the first frame update
@@ -46,7 +46,6 @@ public class GameManager : MonoBehaviour
         if (canDrop == true)
         {
             SpawnToppings.instance.SpawnNextTopping();
-            //FindObjectOfType<SpawnToppings>().SpawnNextTopping();
             toppingDropTimer = toppingDropCoolDown;
         }
         else
@@ -70,11 +69,18 @@ public class GameManager : MonoBehaviour
         {
             isPaused = true;
             Time.timeScale = 0;
+            GameHUDManager.instance.PauseDisplay();
         }
         else
         {
             isPaused = false;
             Time.timeScale = 1;
+            GameHUDManager.instance.PauseDisplay();
         }
+    }
+
+    public void PlayGame()
+    {
+        SceneManager.LoadScene("Play_Scene");
     }
 }
