@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6545624084938346422}
   - component: {fileID: 5708891788232957184}
   - component: {fileID: 8480227447052054674}
+  - component: {fileID: -3125935840476505155}
   m_Layer: 0
   m_Name: PlayerBun
   m_TagString: Player
@@ -153,6 +154,18 @@ MonoBehaviour:
   ramsey: {fileID: 965371156443897405, guid: 69780007fddd22d43a3b2562f3f9256a, type: 3}
   SIDEToppingsEmitter: {fileID: 8267842928246328014}
   burgerTEXTEmitter: {fileID: 3396967930872610099}
+  donkey: {fileID: 8300000, guid: fc6c628af51d96a44b3d7e6d4533f76c, type: 3}
+  ouch: {fileID: 8300000, guid: 980b4a7d9d91e4b46b4ad9ca9a912dea, type: 3}
+  cheeseBurgerSOUND: {fileID: 8300000, guid: d49489a45daffc94cb25854a0c5a3bc0, type: 3}
+  tomatoSOUND: {fileID: 8300000, guid: 1eedde0c6a7b9614c8328f03656f4158, type: 3}
+  cheeseSOUND: {fileID: 8300000, guid: 77bb1405bae3b484695e0543ef0cd065, type: 3}
+  onionSOUND: {fileID: 8300000, guid: ed59544826163e74fa665f61266be587, type: 3}
+  pattySOUND: {fileID: 8300000, guid: 75d5348ea448e7e478c98370991f3c7d, type: 3}
+  ketchupSOUND: {fileID: 8300000, guid: fc81c3c5752ac9f4690777053bf11bbc, type: 3}
+  mustardSOUND: {fileID: 8300000, guid: 929d2563009526944ae3972fa7811d77, type: 3}
+  picklesSOUND: {fileID: 8300000, guid: 1c6f019f9a872b048ab46a1a69ca2a78, type: 3}
+  lettuceSOUND: {fileID: 8300000, guid: 9af3f0df972273d4e95148f724dffe22, type: 3}
+  baconSOUND: {fileID: 8300000, guid: 8bc28f22d4b92f442888b13b8011350f, type: 3}
   sidewaysDisplay0: {fileID: 945775096493556454, guid: 8bddf4c4805e6a24bb1028937e31856c,
     type: 3}
   sidewaysDisplay1: {fileID: 4973168134370061794, guid: 254dfc929b29afb41a04cd4f345f016d,
@@ -186,6 +199,102 @@ MonoBehaviour:
   hasPickles: 0
   hasLettuce: 0
   hasBacon: 0
+--- !u!82 &-3125935840476505155
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009982252576234891}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5d63463b77c92924ab310ab2f8183a38, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3396967930872610099
 GameObject:
   m_ObjectHideFlags: 0

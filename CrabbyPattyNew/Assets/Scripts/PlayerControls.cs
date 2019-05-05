@@ -23,6 +23,22 @@ public class PlayerControls : MonoBehaviour
     public GameObject SIDEToppingsEmitter;
     public GameObject burgerTEXTEmitter;
 
+    private AudioSource playerSound;
+    public AudioClip donkey;
+    public AudioClip ouch;
+
+    public AudioClip cheeseBurgerSOUND;
+    public AudioClip tomatoSOUND;
+    public AudioClip cheeseSOUND;
+    public AudioClip onionSOUND;
+    public AudioClip pattySOUND;
+    public AudioClip ketchupSOUND;
+    public AudioClip mustardSOUND;
+    public AudioClip picklesSOUND;
+    public AudioClip lettuceSOUND;
+    public AudioClip baconSOUND;
+
+
     //public List<GameObject> sidewaysDisplay;
     public GameObject sidewaysDisplay0;
     public GameObject sidewaysDisplay1;
@@ -61,6 +77,7 @@ public class PlayerControls : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         moveDirection = Vector2.zero;
         lives = 3;
+        playerSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -167,6 +184,9 @@ public class PlayerControls : MonoBehaviour
     {
         if (collision.gameObject.tag == "top_bun")
         {
+            playerSound.GetComponent<AudioSource>().clip = cheeseBurgerSOUND;
+            playerSound.Play();
+
             GameObject pointsPOPUP = Instantiate(SpawnToppings.instance.goodToppingsSCOREList[0], scorePOPUPEmitter.transform.position, Quaternion.identity);
             pointsPOPUP.transform.localScale = new Vector2(transform.localScale.x * 0.5f, transform.localScale.y * 0.5f);
             pointsPOPUP.transform.parent = gameObject.transform;
@@ -212,6 +232,9 @@ public class PlayerControls : MonoBehaviour
 
         if (collision.gameObject.tag == "tomato")
         {
+            playerSound.GetComponent<AudioSource>().clip = tomatoSOUND;
+            playerSound.Play();
+
             GameObject pointsPOPUP = Instantiate(SpawnToppings.instance.goodToppingsSCOREList[1], scorePOPUPEmitter.transform.position, Quaternion.identity);
             pointsPOPUP.transform.localScale = new Vector2(transform.localScale.x * 0.5f, transform.localScale.y * 0.5f);
             pointsPOPUP.transform.parent = gameObject.transform;
@@ -262,6 +285,9 @@ public class PlayerControls : MonoBehaviour
 
         if (collision.gameObject.tag == "cheese")
         {
+            playerSound.GetComponent<AudioSource>().clip = cheeseSOUND;
+            playerSound.Play();
+
             GameObject pointsPOPUP = Instantiate(SpawnToppings.instance.goodToppingsSCOREList[2], scorePOPUPEmitter.transform.position, Quaternion.identity);
             pointsPOPUP.transform.localScale = new Vector2(transform.localScale.x * 0.5f, transform.localScale.y * 0.5f);
             pointsPOPUP.transform.parent = gameObject.transform;
@@ -312,6 +338,9 @@ public class PlayerControls : MonoBehaviour
 
         if (collision.gameObject.tag == "onion")
         {
+            playerSound.GetComponent<AudioSource>().clip = onionSOUND;
+            playerSound.Play();
+
             GameObject pointsPOPUP = Instantiate(SpawnToppings.instance.goodToppingsSCOREList[3], scorePOPUPEmitter.transform.position, Quaternion.identity);
             pointsPOPUP.transform.localScale = new Vector2(transform.localScale.x * 0.5f, transform.localScale.y * 0.5f);
             pointsPOPUP.transform.parent = gameObject.transform;
@@ -362,6 +391,9 @@ public class PlayerControls : MonoBehaviour
 
         if (collision.gameObject.tag == "patty")
         {
+            playerSound.GetComponent<AudioSource>().clip = pattySOUND;
+            playerSound.Play();
+
             GameObject pointsPOPUP = Instantiate(SpawnToppings.instance.goodToppingsSCOREList[4], scorePOPUPEmitter.transform.position, Quaternion.identity);
             pointsPOPUP.transform.localScale = new Vector2(transform.localScale.x * 0.5f, transform.localScale.y * 0.5f);
             pointsPOPUP.transform.parent = gameObject.transform;
@@ -412,6 +444,9 @@ public class PlayerControls : MonoBehaviour
 
         if (collision.gameObject.tag == "ketchup")
         {
+            playerSound.GetComponent<AudioSource>().clip = ketchupSOUND;
+            playerSound.Play();
+
             GameObject pointsPOPUP = Instantiate(SpawnToppings.instance.goodToppingsSCOREList[5], scorePOPUPEmitter.transform.position, Quaternion.identity);
             pointsPOPUP.transform.localScale = new Vector2(transform.localScale.x * 0.5f, transform.localScale.y * 0.5f);
             pointsPOPUP.transform.parent = gameObject.transform;
@@ -462,6 +497,9 @@ public class PlayerControls : MonoBehaviour
 
         if (collision.gameObject.tag == "mustard")
         {
+            playerSound.GetComponent<AudioSource>().clip = mustardSOUND;
+            playerSound.Play();
+
             GameObject pointsPOPUP = Instantiate(SpawnToppings.instance.goodToppingsSCOREList[6], scorePOPUPEmitter.transform.position, Quaternion.identity);
             pointsPOPUP.transform.localScale = new Vector2(transform.localScale.x * 0.5f, transform.localScale.y * 0.5f);
             pointsPOPUP.transform.parent = gameObject.transform;
@@ -512,6 +550,9 @@ public class PlayerControls : MonoBehaviour
 
         if (collision.gameObject.tag == "pickles")
         {
+            playerSound.GetComponent<AudioSource>().clip = picklesSOUND;
+            playerSound.Play();
+
             GameObject pointsPOPUP = Instantiate(SpawnToppings.instance.goodToppingsSCOREList[7], scorePOPUPEmitter.transform.position, Quaternion.identity);
             pointsPOPUP.transform.localScale = new Vector2(transform.localScale.x * 0.5f, transform.localScale.y * 0.5f);
             pointsPOPUP.transform.parent = gameObject.transform;
@@ -562,6 +603,9 @@ public class PlayerControls : MonoBehaviour
 
         if (collision.gameObject.tag == "lettuce")
         {
+            playerSound.GetComponent<AudioSource>().clip = lettuceSOUND;
+            playerSound.Play();
+
             GameObject pointsPOPUP = Instantiate(SpawnToppings.instance.goodToppingsSCOREList[8], scorePOPUPEmitter.transform.position, Quaternion.identity);
             pointsPOPUP.transform.localScale = new Vector2(transform.localScale.x * 0.5f, transform.localScale.y * 0.5f);
             pointsPOPUP.transform.parent = gameObject.transform;
@@ -612,6 +656,9 @@ public class PlayerControls : MonoBehaviour
 
         if (collision.gameObject.tag == "bacon")
         {
+            playerSound.GetComponent<AudioSource>().clip = baconSOUND;
+            playerSound.Play();
+
             GameObject pointsPOPUP = Instantiate(SpawnToppings.instance.goodToppingsSCOREList[9], scorePOPUPEmitter.transform.position, Quaternion.identity);
             pointsPOPUP.transform.localScale = new Vector2(transform.localScale.x * 0.5f, transform.localScale.y * 0.5f);
             pointsPOPUP.transform.parent = gameObject.transform;
@@ -664,6 +711,8 @@ public class PlayerControls : MonoBehaviour
         {
             if (lives == 0)
             {
+                playerSound.GetComponent<AudioSource>().clip = donkey; 
+                playerSound.Play();
                 GameObject ramseyPOPUP = Instantiate(ramsey, new Vector2(0, -1), Quaternion.identity);
                 ramseyPOPUP.transform.localScale = new Vector2(transform.localScale.x * 5.0f, transform.localScale.y * 5.0f);
                 Destroy(collision.gameObject);
@@ -672,10 +721,13 @@ public class PlayerControls : MonoBehaviour
                     burgerHighlight.instance.ResetBurgers();
                     numBurgers -= 1;
                 }
-                //you lose navigate to lose scene
+                GameManager.instance.DelayEndGame();
             }
             else
             {
+                badToppings.instance.PlayBadSound();
+                playerSound.GetComponent<AudioSource>().clip = donkey;
+                playerSound.Play();
                 GameObject ramseyPOPUP = Instantiate(ramsey, new Vector2(2, -4), Quaternion.identity);
                 Destroy(ramseyPOPUP, 1.25f);
                 score /= 2;

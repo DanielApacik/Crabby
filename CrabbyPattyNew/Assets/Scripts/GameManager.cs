@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        toppingDropTimer = 0.5f;
+        toppingDropTimer = 0.0f;
         toppingDropCoolDown = 1.0f;
         isPaused = false;
         spawnPlayerLocation = new Vector2(-2f, -4.2f);
@@ -40,7 +40,6 @@ public class GameManager : MonoBehaviour
         }
         else if (PlayerControls.instance.bankedScore >= 300)
         {
-            SpawnToppings.instance.fallSpeed = 0.75f;
             toppingDropCoolDown = 0.25f;
         }
         else if (PlayerControls.instance.bankedScore >= 400)
@@ -49,8 +48,11 @@ public class GameManager : MonoBehaviour
         }
         else if (PlayerControls.instance.bankedScore >= 600)
         {
-            SpawnToppings.instance.fallSpeed = 1.0f;
             toppingDropCoolDown = 0.025f;
+        }
+        else if (PlayerControls.instance.bankedScore >= 800)
+        {
+            toppingDropCoolDown = 0.0025f;
         }
 
 
@@ -67,8 +69,16 @@ public class GameManager : MonoBehaviour
 
         if (canDrop == true)
         {
-            SpawnToppings.instance.SpawnNextTopping();
-            toppingDropTimer = toppingDropCoolDown;
+            if (PlayerControls.instance.bankedScore >= 1000)
+            {
+                SpawnToppings.instance.SpawnNextToppingHard();
+                toppingDropTimer = toppingDropCoolDown;
+            }
+            else if (PlayerControls.instance.bankedScore < 1000)
+            {
+                SpawnToppings.instance.SpawnNextTopping();
+                toppingDropTimer = toppingDropCoolDown;
+            }
         }
         else
         {
@@ -101,8 +111,32 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void StartScreen()
+    {
+        SceneManager.LoadScene("Start_Scene");
+    }
+
     public void PlayGame()
     {
         SceneManager.LoadScene("Play_Scene");
+    }
+
+    public void Credits()
+    {
+        SceneManager.LoadScene("Credits_Scene");
+    }
+
+    public void Controls()
+    {
+        SceneManager.LoadScene("Info_Scene");
+    }
+
+    public void DelayEndGame()
+    {
+        Invoke("EndGame", 1.0f);
+    }
+    public void EndGame()
+    {
+        SceneManager.LoadScene("Game_Over");
     }
 }

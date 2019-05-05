@@ -128,7 +128,7 @@ public class SpawnToppings : MonoBehaviour
         for (int i = 0; i < goodToppingsList.Count; ++i)
         {
             GameObject displayTopping = Instantiate(goodToppingsList[i], displayEmitterList[i].transform.position, Quaternion.identity);
-            displayTopping.transform.localScale = new Vector2(transform.localScale.x * 0.04f, transform.localScale.y * 0.4f);
+            displayTopping.transform.localScale = new Vector2(transform.localScale.x * 0.04f, transform.localScale.y * 0.5f);
             Rigidbody2D rbTopping = displayTopping.GetComponent<Rigidbody2D>();
             rbTopping.gravityScale = 0;
         }
@@ -150,7 +150,7 @@ public class SpawnToppings : MonoBehaviour
         for (int i = 0; i < goodToppingsSCOREList.Count; ++i)
         {
             GameObject displayPoints = Instantiate(goodToppingsSCOREList[i], displayPointsEmitterList[i].transform.position, Quaternion.identity);
-            displayPoints.transform.localScale = new Vector2(transform.localScale.x * 0.04f, transform.localScale.y * 0.4f);
+            displayPoints.transform.localScale = new Vector2(transform.localScale.x * 0.04f, transform.localScale.y * 0.5f);
         }
     }
 
@@ -168,6 +168,21 @@ public class SpawnToppings : MonoBehaviour
             SpawnGOODTopping();
         }
     }
+    
+    public void SpawnNextToppingHard()
+    {
+        randomTopping = Random.Range(0, 4);
+
+        if (randomTopping == 0 || randomTopping == 1)
+        {
+            SpawnBADToppingDbl();
+        }
+
+        if (randomTopping == 2 || randomTopping == 3)
+        {
+            SpawnGOODToppingDbl();
+        }
+    }
 
     public void SpawnGOODTopping()
     {
@@ -181,5 +196,27 @@ public class SpawnToppings : MonoBehaviour
         GameObject nextTopping = Instantiate(badToppingsList[Random.Range(0, badToppingsList.Count)], new Vector2(Random.Range(-7, 4), 6), Quaternion.identity);
         Rigidbody2D rbToppingBad = nextTopping.GetComponent<Rigidbody2D>();
         rbToppingBad.gravityScale = fallSpeed;
+    }
+
+    public void SpawnGOODToppingDbl()
+    {
+        GameObject nextTopping = Instantiate(goodToppingsList[Random.Range(0, goodToppingsList.Count)], new Vector2(Random.Range(-7, -2), 6), Quaternion.identity);
+        Rigidbody2D rbToppingGood = nextTopping.GetComponent<Rigidbody2D>();
+        rbToppingGood.gravityScale = fallSpeed;
+
+        GameObject nextTopping2 = Instantiate(goodToppingsList[Random.Range(0, goodToppingsList.Count)], new Vector2(Random.Range(-2, 4), 8), Quaternion.identity);
+        Rigidbody2D rbToppingGood2 = nextTopping2.GetComponent<Rigidbody2D>();
+        rbToppingGood2.gravityScale = fallSpeed;
+    }
+
+    public void SpawnBADToppingDbl()
+    {
+        GameObject nextTopping = Instantiate(badToppingsList[Random.Range(0, badToppingsList.Count)], new Vector2(Random.Range(-7, -2), 6), Quaternion.identity);
+        Rigidbody2D rbToppingBad = nextTopping.GetComponent<Rigidbody2D>();
+        rbToppingBad.gravityScale = fallSpeed;
+
+        GameObject nextTopping2 = Instantiate(badToppingsList[Random.Range(0, badToppingsList.Count)], new Vector2(Random.Range(-2, 4), 8), Quaternion.identity);
+        Rigidbody2D rbToppingBad2 = nextTopping2.GetComponent<Rigidbody2D>();
+        rbToppingBad2.gravityScale = fallSpeed;
     }
 }
